@@ -5,7 +5,7 @@ services:
     image: registry.digitalocean.com/hypercube/base:v2.0.0
     build: .
   debug:
-    image: registry.digitalocean.com/hypercube/debug:v2.0.0
+    image: registry.digitalocean.com/hypercube/debug:v2.1.0
     build:
       context: .
       dockerfile: debug.Dockerfile

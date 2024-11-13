@@ -6,7 +6,7 @@ RUN set -ex; \
     rm /etc/apt/apt.conf.d/docker-*; \
     echo 'APT::AutoRemove::SuggestsImportant "false";' >/etc/apt/apt.conf.d/99nosuggests; \
     apt-get update; \
-    apt-get install -y bash-completion ca-certificates curl git gnupg htop less locales-all man-db openssh-server psmisc python3 rsync screen sudo tini tmux vim wget; \
+    apt-get install -y bash-completion ca-certificates curl git gnupg htop less locales-all man-db openssh-server psmisc python3 rsync screen sudo tini tmux unar vim wget; \
     apt-get clean; \
     rm -rf /var/lib/apt/lists/*; \
     echo '%sudo ALL=(ALL:ALL) NOPASSWD:ALL' >/etc/sudoers.d/00-nopasswd; \
