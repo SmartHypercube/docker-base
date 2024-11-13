@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM debian:bookworm-slim
 
 RUN set -ex; \
     adduser --uid 1000 --disabled-password --gecos '' app; \

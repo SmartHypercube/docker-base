@@ -2,10 +2,10 @@ version: '3.6'
 
 services:
   base:
-    image: registry.digitalocean.com/hypercube/base:v1.1.0
+    image: registry.digitalocean.com/hypercube/base:v2.0.0
     build: .
   debug:
-    image: registry.digitalocean.com/hypercube/debug:v1.1.0
+    image: registry.digitalocean.com/hypercube/debug:v2.0.0
     build:
       context: .
       dockerfile: debug.Dockerfile
