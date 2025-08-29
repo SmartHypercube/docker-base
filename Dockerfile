@@ -1,7 +1,7 @@
-FROM debian:bookworm-slim
+FROM debian:trixie-slim
 
 RUN set -ex; \
-    adduser --uid 1000 --disabled-password --gecos '' app; \
+    useradd --create-home app; \
     apt-get update; \
     apt-get install -y --no-install-recommends tini; \
     apt-get clean; \

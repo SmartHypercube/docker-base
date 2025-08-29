@@ -1,7 +1,7 @@
-FROM debian:bookworm
+FROM debian:trixie
 
 RUN set -ex; \
-    adduser --uid 1000 --disabled-password --gecos '' app; \
+    useradd --create-home app; \
     rm /etc/dpkg/dpkg.cfg.d/docker-*; \
     rm /etc/apt/apt.conf.d/docker-*; \
     echo 'APT::AutoRemove::SuggestsImportant "false";' >/etc/apt/apt.conf.d/99nosuggests; \
@@ -11,7 +11,7 @@ RUN set -ex; \
     rm -rf /var/lib/apt/lists/*; \
     echo '%sudo ALL=(ALL:ALL) NOPASSWD:ALL' >/etc/sudoers.d/00-nopasswd; \
     chmod 440 /etc/sudoers.d/00-nopasswd; \
-    adduser app sudo; \
+    usermod --append --groups sudo app; \
     runuser -l app -c 'curl https://0x01.me/dotfiles/setup.sh | bash'
 
 USER app
